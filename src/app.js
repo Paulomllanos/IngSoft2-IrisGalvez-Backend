@@ -5,7 +5,9 @@ const morgan = require("morgan");
 
 const app = express();
 const systemRoutes = require("./routes/system.routes");
-
+const professionalsRoutes = require(
+    "./routes/professionals.routes"
+);
 /*
 |--------------------------------------------------------------------------
 | Middlewares Globales
@@ -27,7 +29,10 @@ app.use(express.urlencoded({
 app.use(morgan("dev"));
 
 app.use("/api/system", systemRoutes);
-
+app.use(
+    "/api/profesionales",
+    professionalsRoutes
+);
 /*
 |--------------------------------------------------------------------------
 | Ruta Health Check
